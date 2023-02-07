@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
+class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
 
   const CustomAppBar({
@@ -16,18 +16,23 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
       centerTitle: true,
       title: Container(
         color: Colors.black,
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-        child:  Text(title,style: const TextStyle(color: Colors.white,fontSize: 24,fontFamily: 'Avenir',fontWeight: FontWeight.bold),),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Text(
+          title,
+          style: Theme.of(context).textTheme.headline2!.copyWith(color: Colors.white),
+        ),
       ),
       iconTheme: const IconThemeData(color: Colors.black),
       actions: [
-        IconButton(icon: const Icon(Icons.favorite),onPressed: (){
-          Navigator.pushNamed(context, '/Wishlist');
-        })
+        IconButton(
+            icon: const Icon(Icons.favorite),
+            onPressed: () {
+              Navigator.pushNamed(context, '/Wishlist');
+            })
       ],
     );
   }
-  
+
   @override
   Size get preferredSize => const Size.fromHeight(50.0);
 }

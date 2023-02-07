@@ -14,15 +14,21 @@ class CustomNavbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-          IconButton(onPressed: (){
+          IconButton(
+              icon: Icon(Icons.home,color: Colors.white,),
+            onPressed: (){
             Navigator.pushNamed(context, '/');
-          }, icon: Icon(Icons.home,color: Colors.white,)),
-          IconButton(onPressed: (){
-            Navigator.pushNamed(context, '/');
-          }, icon: Icon(Icons.shopping_cart,color: Colors.white,)),
-          IconButton(onPressed: (){
-            Navigator.pushNamed(context, '/');
-          }, icon: Icon(Icons.person,color: Colors.white,)),
+          },),
+            IconButton(
+              icon: Icon(Icons.shopping_cart,color: Colors.white,),
+              onPressed: (){
+                Navigator.pushNamed(context, '/cart');
+              },),
+            IconButton(
+              icon: Icon(Icons.person,color: Colors.white,),
+              onPressed: (){
+                Navigator.pushNamed(context, '/');
+              },),
         ]),
       ),
     );

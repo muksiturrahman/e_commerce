@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 class Wishlist extends StatelessWidget {
 static const String routeName = '/Wishlist';
 
+  const Wishlist({Key? key}) : super(key: key);
+
 static Route route(){
   return MaterialPageRoute(
     settings: const RouteSettings(name: routeName),
-    builder: (_) =>  Wishlist()
+    builder: (_) =>  const Wishlist()
   );
 }
 
